@@ -1,5 +1,4 @@
-const list1 = [
-  {
+const list1 = [{
     firstName: "Noah",
     lastName: "M.",
     country: "Switzerland",
@@ -59,8 +58,8 @@ Hi < firstName here >, what do you like the most about < language here >?
 */
 
 const greetingPerson = list1.map((el) => {
-  return (el.gretting =
-    "Hi < firstName here >, what do you like the most about < language here >?");
+  el.gretting = `Hi ${el.firstName}, what do you like the most about ${el.language}?`
+  return el
 });
 //console.log(greetingPerson);
 
@@ -70,8 +69,7 @@ returns only the JavaScript developers who are GitHub admins:
 
 */
 
-const list2 = [
-  {
+const list2 = [{
     firstName: "Harry",
     lastName: "K.",
     country: "Brazil",
@@ -112,19 +110,18 @@ const list2 = [
 const findAdmin = (lista, language) => {
   const isAdm = lista.filter(
     (dev) =>
-      dev.githubAdmin === "yes" &&
-      dev.language.toLowerCase() === language.toLowerCase()
+    dev.githubAdmin === "yes" &&
+    dev.language.toLowerCase() === language.toLowerCase()
   );
-  return isAdm || [];
+  return isAdm;
 };
 
-//console.log(findAdmin(list2, "javaScript"));
+console.log(findAdmin(list2, "javaScript"));
 
 /* 
 Find the senior
 */
-const list3 = [
-  {
+const list3 = [{
     firstName: "Gabriel",
     lastName: "X.",
     country: "Monaco",
@@ -153,20 +150,41 @@ const list3 = [
     lastName: "B.",
     country: "Japan",
     continent: "Asia",
-    age: 49,
+    age: 128,
     language: "PHP",
   },
 ];
 
 const seniorDev = (lista) => {
-  let elder = lista[0].age;
-  return lista.filter((dev) => (dev.age < elder ? elder : (elder = dev.age)));
+  let elder = lista[0].age
+  let seniorName = lista[0].firstName
+  lista.filter(dev => {
+    if (dev.age > elder) {
+      elder = dev.age
+      seniorName = dev.firstName
+
+
+
+    }
+
+  })
+  return {
+    name: seniorName,
+    age: elder
+  }
 };
 
+console.log(seniorDev(list3))
+
+const seniorDevAge = (lista) => {
+  let elder = lista[0].age
+  lista.filter((dev) => (dev.age < elder ? elder : (elder = dev.age)))
+  return elder
+};
+console.log(seniorDevAge(list3))
 /* Coding Meetup #11 - Higher-Order Functions Series - Find the average age */
 
-var list4 = [
-  {
+var list4 = [{
     firstName: "Maria",
     lastName: "Y.",
     country: "Cyprus",

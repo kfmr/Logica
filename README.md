@@ -1,5 +1,5 @@
 # Programming
-Repositório de exercícios de programação que fiz em linguagens de programação como Javascript, Python e outros. <br>
+Repositório de exercícios de programação que fiz em linguagens de como Javascript, Python e outros. <br>
 As minhas resoluções dos exercicios foram de sites de programação, tais como:
 
 * [Alura](https://www.alura.com.br/)

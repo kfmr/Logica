@@ -16,7 +16,6 @@ class Person:
 
     def yearPasses(self):
         self.initialAge = self.initialAge + 1
-        return age
 
 
 t = int(input())
